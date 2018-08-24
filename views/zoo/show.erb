@@ -1,7 +1,15 @@
 <!-- The header will have the animal name at the top -->
 <h1><%= @zoo[:animal_names] %></h1>
+<!-- The header will have the animal age -->
+<p><h4>Animal Age: </h4><%= @zoo[:age] %></p>
+<!-- The header will have the animal gender -->
+<p><h4>Animal Gender: </h4><%= @zoo[:gender] %></p>
+<!-- The header will have the animal type -->
+<p><h4>Animal Type: </h4><%= @zoo[:type] %></p>
+<!-- The header will have the animal enclosure number -->
+<p><h4>Animal Enclosure: </h4><%= @zoo[:enclosure] %></p>
 <!-- The animal_description of the be placed underneath the header -->
-<p><%= @zoo[:animal_description] %></p>
+<p><h4>Animal Desciption: </h4><%= @zoo[:animal_description] %></p>
 <!-- The form gives the page the ability to delete the animal for the website -->
 <form action="/<%= @zoo[:id] %>" method="POST">
   <input type="hidden" name="_method" value="DELETE">

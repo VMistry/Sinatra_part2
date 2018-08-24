@@ -11,17 +11,29 @@ class PostController < Sinatra::Base
   $zoo = [
     {
       id:0,
-      animal_names: 'Animal 0',
+      animal_names: 'Melissa',
+      age: '12',
+      gender: 'Female',
+      type: 'Chimp',
+      enclosure: "64",
       animal_description:'This is the first animal'
     },
     {
       id:1,
-      animal_names: 'Animal 1',
+      animal_names: 'Franky',
+      age: '20',
+      gender: 'Female',
+      type: 'Elephant',
+      enclosure: "45",
       animal_description:'This is the second animal'
     },
     {
       id:2,
-      animal_names: 'Animal 2',
+      animal_names: 'Carl',
+      age: '5',
+      gender: 'Male',
+      type: 'Bush Baby',
+      enclosure: "50",
       animal_description:'This is the third animal'
     }
   ]
@@ -41,6 +53,10 @@ class PostController < Sinatra::Base
     @zoo = {
       id: "",
       animal_names: "",
+      age: "",
+      gender: "",
+      type: "",
+      enclosure: "",
       animal_description: ""
     }
     # Target the new animal erb file.
@@ -77,6 +93,10 @@ class PostController < Sinatra::Base
       id: $zoo.length,
       #Save the information inserted in to the provided feilds
       animal_names: params[:animal_names],
+      age: params[:age],
+      gender: params[:gender],
+      type: params[:type],
+      enclosure: params[:enclosure],
       animal_description: params[:animal_description]
     }
     # save the object in the array
@@ -91,6 +111,10 @@ class PostController < Sinatra::Base
     zoo = $zoo[id]
 
     zoo[:animal_names] = params[:animal_names]
+    zoo[:age] = params[:age]
+    zoo[:gender] = params[:gender]
+    zoo[:type] = params[:type]
+    zoo[:enclosure] = params[:enclosure]
     zoo[:animal_description] = params[:animal_description]
     $zoo[id] = zoo
     redirect "/"
