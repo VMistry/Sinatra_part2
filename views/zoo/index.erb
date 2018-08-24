@@ -1,0 +1,15 @@
+<!-- Header -->
+<h1>Welcome to the Zoo homepage</h1>
+<!-- A do loop to generate all the animals. The <%  %> allows you to insert ruby code-->
+<% @zoo.each do |zoo| %>
+  <div>
+      <!-- Show name as subheader. It will be a link -->
+    <h3>
+      <a href='<%= zoo[:id] %>'>
+        <%= zoo[:animal_names] %>
+      </a>
+    </h3>
+    <!-- Show description as text -->
+    <p><%= zoo[:animal_description] %></p>
+  </div>
+<% end %>

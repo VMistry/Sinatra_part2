@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<!-- This is the HTML body which all the pages will be using. It is a template which all will share -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <!-- Have a consistant title -->
+    <title><%= @animal_names %></title>
+  </head>
+  <body>
+    <!-- Add the nav bar to the pages -->
+    <%= erb(:'partials/navigation', :layout => false) %>
+    <!-- Fill in the space with the chosen webpage -->
+    <%= yield %>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+<form action="/<%= @zoo[:id] %>" method="post">
+  <!-- Allow the user to insert the name -->
+  <div>
+    <label>Animal_names</label>
+    <input type="text" name="animal_names" placeholder="Enter a title" value="<%= @zoo[:animal_names] %>">
+  </div>
+  <!-- Allow the user to insert the a desciption -->
+  <div>
+    <label>animal_description</label>
+    <textarea type="text" name="animal_description" placeholder="Body of text"><%= @zoo[:animal_description] %></textarea>
+  </div>
+    <!-- Allow the user to submit the results -->
+  <div>
+    <input type="submit" value="Save Post">
+  </div>
+  <!-- Ruby code to check if the id is empty -->
+  <!-- Use the function to put the data in to array -->
+  <% if(@zoo[:id] != "") %>
+    <input type="hidden" name="_method" value="PUT">
+  <% end %>
+</form>

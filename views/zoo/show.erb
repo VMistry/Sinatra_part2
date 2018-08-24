@@ -1,0 +1,11 @@
+<!-- The header will have the animal name at the top -->
+<h1><%= @zoo[:animal_names] %></h1>
+<!-- The animal_description of the be placed underneath the header -->
+<p><%= @zoo[:animal_description] %></p>
+<!-- The form gives the page the ability to delete the animal for the website -->
+<form action="/<%= @zoo[:id] %>" method="POST">
+  <input type="hidden" name="_method" value="DELETE">
+  <input type="submit" value="Delete">
+</form>
+<!-- Injecting your id in to HTML page -->
+<a href="<%= @zoo[:id] %>/edit">Edit</a>
